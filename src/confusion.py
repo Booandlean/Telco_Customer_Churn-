@@ -21,7 +21,9 @@ def plot_confusion_matrix(cm, classes,
 
     print(cm)
 
-    plt.imshow(cm, interpolation='nearest', cmap=cmap)
+    fig, ax = subplots(figsize = (15, 15))
+    
+    ax.imshow(cm, interpolation='nearest', cmap=cmap)
     plt.title(title)
     plt.colorbar()
     tick_marks = np.arange(len(classes))
