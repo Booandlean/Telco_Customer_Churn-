@@ -15,6 +15,10 @@ def prep_df():
     encode_df = df.drop(['customerID', 'tenure', 'MonthlyCharges', 'TotalCharges'],  axis = 1)
     le = LabelEncoder()
     encoded_df = encode_df.apply(le.fit_transform)
-    encoded_df[['tenure', 'MonthlyCharges', 'TotalCharges']] = df[['tenure', 'MonthlyCharges', 'TotalCharges']]
+    ss = StandardScaler()
+    num_cols = df[['tenure', 'MonthlyCharges', 'TotalCharges']]
+    ss.fit_transform(num_cols)
+    encoded_df[['tenure', 'MonthlyCharges', 'TotalCharges']] = num_cols
+    #df[['tenure', 'MonthlyCharges', 'TotalCharges']]
     
     return encoded_df
