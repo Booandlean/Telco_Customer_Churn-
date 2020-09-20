@@ -3,6 +3,7 @@ import numpy as np
 from scipy import stats
 
 from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import StandardScaler
 
 
 
