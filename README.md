@@ -4,20 +4,28 @@
 
 [data](https://github.com/Booandlean/Telco_Customer_Churn-/tree/master/data)
 *Contains project data*
+
 [src](https://github.com/Booandlean/Telco_Customer_Churn-/tree/master/src)
 *Contains .py files of methods used*
+
 [.gitignore](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/.gitignore)
 *Tells git what to ignore*
+
 [EDA_+_Vis.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/EDA_%2B_Vis.ipynb)
 *Contains work for EDA and project visualizations*
+
 [FSMs.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/FSMs.ipynb)
 *Contains work done to create first simple models*
+
 [Final_Model.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Final_Model.ipynb)
 *Contains final model*
+
 [Final_Notebook.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Final_Notebook.ipynb)
 *Contains final notebook with discussion of modeling process and results*
+
 [Modeling_Part_2.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Modeling_Part_2.ipynb)
 *Contains work done for parameter tuning between FSMs and Final Model*
+
 [README.md](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/README.md)
 #### *you are here*
 
