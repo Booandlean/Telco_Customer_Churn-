@@ -17,14 +17,23 @@
 [FSMs.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/FSMs.ipynb)
 *Contains work done to create first simple models*
 
-[Final_Model.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Final_Model.ipynb)
-*Contains final model*
+[Final_Model_(old).ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Final_Model_(old).ipynb)
+*Contains final model from first workthrough*
+
+[Final_Model_(new).ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Final_Model_(new).ipynb)
+*Contains final model from second workthrough*
 
 [Final_Notebook.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Final_Notebook.ipynb)
 *Contains final notebook with discussion of modeling process and results*
 
 [Modeling_Part_2.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Modeling_Part_2.ipynb)
 *Contains work done for parameter tuning between FSMs and Final Model*
+
+[Recall_modeling.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Recall_modeling.ipynb)
+*Contains work done for parameter tuning models with recall score in mind*
+
+[Recall_modeling_plus_SMOTE.ipynb](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/Recall_modeling_plus_SMOTE.ipynb)
+*Same as prior notebook but using SMOTE to fight bias*
 
 [README.md](https://github.com/Booandlean/Telco_Customer_Churn-/blob/master/README.md)
 #### *you are here*
@@ -58,12 +67,23 @@ Upon opening jupyer notebook, go to the 'new' button with the down arrow. You sh
 #### What do I do now?
 Running the code blocks in order within the .ipynb notebooks will work just fine. For the sake of replicating my work I made them in the order of EDA + Vis, FSMs, Modeling_Part_2, Final_Model, then Final_Notebook. 
 
-## Modeling Results
+## Results
 
-In the end the best performing model for accuracy was a random forest with a .79 accuracy score. I will note that other times I had run it without the random state it had managed to go over .8, however it would be hacky of me to keep rolling the virtual dice to do so. 
+(old and incorrect)
+In the end the best performing model for accuracy was the random forest with a .79. I will note that other times I had run it without the random state it had managed to go over .8, however it would be hacky of me to keep rolling the virtual dice to do so. 
+
+
+(New and better)
+The accuracy score may be lower than the first time around with a score about .77 and the recall score may only be .56 but this new model is signifigantly less biased towards guessing 'not churned' than before now that it has a more balanced dataset. My goal was to lower the number of false negatives (incorrectly guessing that a customer will churn when they will not) and I did succeed at that goal. However, now there are more false postives (incorrectly guessing that a customer will not churn when they will) which is a new problem. 
+
+Based on the visualizations made earlier it is looking like customers with monthly contracts are especially likely to churn. Additonal traits to look out for are customers who are senior citizens, have no partner, no dependents, pay their bills with an electronic check, and did not purchase any tech support and/ or online security plans. 
 
 ## Next Steps
 
-For the next time I work on this project I am palnning on doing things differently. For starters I had used accuracy as my model performance score. Using accuracy is not necessarily a bad idea for predictive modeling, however while working with customer churn I am theoretically advising a company on how to allocate their funds on specific people who are at risk of churning. Mistakenly claiming someone may churn out while in reality they won't (this is in refrence to false negatives/ FN in the confusion matrix) could end up costing the company money that they do not need to spend on people they do not need to pay extra attention to. This is why I will be using the recall score over the accuracy score in the next iteration of this project. If I were doing this with false negatives in mind and tuning the mdoels for recall over accuracy, the KNN model would have likely won. 
+The next time I work on this project I am palnning on doing things differently. 
 
-One avenue that is definetly worth exploring is using something like SMOTE to even out the number of churned vs non churned customers. This will certainly be done in the phase 2 of this project, but I am mostly stopping for now as I want to work on other things.
+The new goal will be to lower the number of false positives. The way that I was looking at it originaly was that FP's did not look to be a huge problem, and there were a number of false negatives that I thought could cause additional costs. After using SMOTE and balancing the number of curned vs not churned customers this changed. Predicting that people will not leave when in reality they will will lead to a greater loss of revenue than spending extra on staying customers. This is why I will be optimizing the models with false positives in mind in the future. 
+
+I would also like to try messing with the data itself more, perhaps using different encoders and scalers and using a data balancing technique other than SMOTE. 
+
+I will return to this project eventualy, but for now I wish to practice other things. 
